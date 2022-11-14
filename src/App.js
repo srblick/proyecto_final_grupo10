@@ -14,6 +14,7 @@ export default function App(){
             physics: {
                 default: 'arcade',
                 arcade: {
+                    debug: true,
                     gravity: { y: 200 }
                 }
             },
@@ -23,7 +24,7 @@ export default function App(){
                 create: create
             }*/
         };
-        // arranca el Juego
+        // arranca el Juego 
         const game = new Phaser.Game(config);
         //trigger el juego esta completamente listo
         game.events.on("LISTO", setListo);
