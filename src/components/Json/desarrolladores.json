@@ -1,0 +1,49 @@
+[ 
+    {
+      "edad": 21,
+      "title": "Ibrahim Baruc Rivas Rada",
+      "imagen": "../img/imagen1.jpeg",
+      "text": "Tengo 21 años, me gusta programar, juego battlefield y genshin impact, y estudio japones cuando estoy libre.",
+      "repositorio": "https://github.com/Baruc99rr2?tab=repositories"
+    },
+    {
+      "edad": 21,
+      "title": "Nahuel Iván Albarado",
+      "imagen": "../img/imagen2.jpeg",
+      "text": "Soy un aspirante desarrollador de videojuegos, lo que más me entretiene es jugar estos mismos, soy fan de los juegos Shooters.",
+      "repositorio": "https://github.com/NahuelALB?tab=repositories"
+    },
+    {
+
+      "title": "Nicolas Kramich",
+      "edad": 21,
+      "imagen": "../img/imagen3.jpeg",
+      "text": "Soy Nicolás, estoy estudiando para poder desarrollar mis propios video juegos.",
+      "repositorio": "https://github.com/NicolasFKL?tab=repositories"
+    },
+    {
+
+      "title": "Nayla Aixa Leiva",
+      "edad": 21,
+      "imagen": "../img/imagen4.jpeg",
+      "text": "Estudiante de la tec en Videojuegos. Me gusta todo lo relacionado con la animacion y los videojuegos, a pesar de eso, aprendo todos los dias algo nuevo en todos lados, puesto que empece sin base alguna.",
+      "repositorio": "https://github.com/leivanaylaixa?tab=repositories"
+    },
+    {
+
+      "edad": 31,
+      "title": "Cristian Ariel Mamani",
+      "imagen": "../img/imagen5.jpeg",
+      "text": "Me gusta programar y los autos, soy autodidacta y me gustaria aprende Inteligencia Artificial.",
+      "repositorio": "https://github.com/srblick?tab=repositories"
+    },
+    {
+
+      "edad": 21,
+      "title": "Juan Mendía",
+      "imagen": "../img/imagen6.png",
+      "text": "愛してます",
+      "RefererUrl": "https://github.com/JuanMendia10?tab=repositories"
+    }
+
+]
