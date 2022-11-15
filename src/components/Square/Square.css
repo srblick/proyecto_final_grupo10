@@ -18,25 +18,25 @@
     border-radius: 50%;
 }
 
-.square--X.winner {
+.square--X.winner {/* si Square de clase X y tiene la clase winner le agregamos animacion*/
     animation: x-winner-animation infinite 2s ease-in-out;
 }
 
-.square--O.winner {
+.square--O.winner {/* si Square de clase O y tiene la clase winner le agregamos animacion*/
     animation: o-winner-animation infinite .5s ease-in-out;
 }
 
 @keyframes x-winner-animation {
     from {
-        transform: rotate(0deg);
+        transform: rotate(0deg);/* roacion de 0*/
     }
     to {
-        transform: rotate(360deg);
+        transform: rotate(360deg);/*hasta una rotacion de 360*/
     }
 }
 
-@keyframes o-winner-animation {
-    0% { border-radius: 50%;}
-    50% { border-radius: 0%;}
-    100% { border-radius: 50%;}
+@keyframes o-winner-animation {/*lo agrandamos y lo achicamos para el caso de los circulos */
+    0% { border-radius: 50%;}/*que inicie en un estado normal*/
+    50% { border-radius: 0%;}/*se achique a mitad de la animacion*/
+    100% { border-radius: 50%;}/*que vuelva a un estado normal*/
 }
