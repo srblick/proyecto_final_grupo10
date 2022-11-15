@@ -3,7 +3,6 @@ import BulletGroup from "./BulletGroup";
 import EnemyBulletGroup from "./EnemyBulletGroup";
 import EnemyGroup from "./EnemyGroup";
 import Player from "./Player";
-import PlayerGroup from "./PlayerGroup";
 
 class Escena extends Phaser.Scene{
     player = null;
@@ -15,7 +14,12 @@ class Escena extends Phaser.Scene{
     velocidad = 250;
     graphics;
     rutas = [];
-    fireEnemyTimer = 1000;
+    
+    enemyShotSpeed = 1000;
+    enemyShotTime = 1000;
+
+    enemySpawnSpeed = 400;
+    enemySpawnTime = 0;
 
 
     preload ()
@@ -64,12 +68,7 @@ class Escena extends Phaser.Scene{
         });
 
         this.cursors = this.input.keyboard.createCursorKeys();
-
-        this.player = this.physics.add.sprite(400, 100, 'nave0').setScale(0.6);//.setImmovable();
-        this.player.body.allowGravity = false;
-        this.player.lives = 3;
-        this.player.isTrashed = false;
-//        this.player.setData('lives', 3);
+        this.player = new Player(this, 400, 550, 'nave0');
 
         //Grupo para agregar enemigos        
         this.enemyGroup = new EnemyGroup(this);
@@ -90,9 +89,10 @@ class Escena extends Phaser.Scene{
     
     update(time)
     {
+        /** Mustra la ruta de los enemigos  
         this.graphics.clear();
         this.graphics.lineStyle(1, 0xffffff, 1);
-        this.rutas[0].draw(this.graphics, 180);
+        this.rutas[0].draw(this.graphics, 180);//*/
     
 
         //controles Izquierda y Derecha de la nave
@@ -111,10 +111,9 @@ class Escena extends Phaser.Scene{
         }else{
             this.player.setVelocityY(0);
         }
-
-        if (this.input.keyboard.checkDown(this.cursors.space, 250)) {
+        // Dispara bala
+        if (this.input.keyboard.checkDown(this.cursors.space, 500)) {
             this.toShoot(this.player);
-            this.createEnemy();
         }        
 
         let enemies = this.enemyGroup.getChildren();
@@ -126,13 +125,16 @@ class Escena extends Phaser.Scene{
             //  el vector es actualizado
             this.rutas[0].getPoint(t, vec);
             enemies[i].setPosition(vec.x, vec.y);
-            if(this.time.now > this.fireEnemyTimer && aux == i)
-            {
+            if(this.time.now > this.enemyShotTime && aux == i)
+            {   
                 this.toShootEnemy(vec.x, vec.y, this.player);
             }
         }    
-        if(this.player.isTrashed){
+        if(this.player.isTrashed()){
             this.player.setTint(Phaser.Math.Between(0x0,0xffffff));
+        }
+        if(this.time.now > this.enemySpawnTime){
+            this.createEnemy();
         }
     }
 
@@ -144,10 +146,9 @@ class Escena extends Phaser.Scene{
 
     toShootEnemy(x, y, player)
     {
-
         let bullet = this.enemyBulletGroup.addBullet(x, y); 
         this.physics.moveToObject(bullet, player, 200);
-        this.fireEnemyTimer = this.time.now + Phaser.Math.Between(500,1500);
+        this.enemyShotTime = this.time.now + Phaser.Math.Between(this.enemyShotSpeed - 500, this.enemyShotSpeed + 500);
     }
 
     deadEnemy(bullet, enemy)
@@ -164,22 +165,21 @@ class Escena extends Phaser.Scene{
     
     deadPlayer(player, bullet)
     {
-        if(!this.player.isTrashed)
+        if(!player.isTrashed())
         {
-            this.player.isTrashed = true;
+            player.setIsTrashed(true);
 
             bullet.destroy();
-            if(this.player.lives == 0)
+            if(player.getLives() == 0)
             {   
                 player.destroy();// cambiar de escena 
             }else
             {
-                this.player.lives--;
-                console.log(this.player.lives);
+                player.subLives();
                 this.time.addEvent({
                     delay: 3000,
                     callback: () => {
-                        this.player.isTrashed = false;
+                        player.setIsTrashed(false);
                         player.clearTint();
                     }
                 });    
@@ -198,12 +198,12 @@ class Escena extends Phaser.Scene{
             duration: 22000,
             repeat: -1
         });
+        this.enemySpawnTime = this.time.now + this.enemySpawnSpeed;
     }
     createPaths()
     {
         this.graphics = this.add.graphics();    
         this.rutas.push(new Phaser.Curves.Spline([25, -10, 100, 71, 703, 39, 711, 99, 92, 113, 104, 181, 712, 149, 721, 201, 92, 221, 95, 286, 707, 243, 720, 316, 92, 332, 114, 411, 718, -10]));
     }
-
 }
 export default Escena;
