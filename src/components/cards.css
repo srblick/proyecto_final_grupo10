@@ -14,8 +14,8 @@
 .imagen-card{
     height: auto;
     width: auto;
-    max-height: 600px;
-    max-width: 500px;
+    max-height: 180px;
+    max-width: 150px;
 }
 .card{
     padding: 10px;

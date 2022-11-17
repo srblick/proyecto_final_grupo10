@@ -112,11 +112,10 @@ export default function Game() {
                 <h2 className="intentos">Intentos permitidos: {live}</h2>
             </div>
             <div className="app" >
-                <div className="cards-container" >
+            <div className="cards-container" >
                     {
                         //Este operador ternario hace lo siguiente...
                         score >= 150 ? winner() : live <= 0 ? losser() :
-
                             cards.map((card, index) => ( //por cada una de las cartas devuelve el componente "Card"
                                 <Card
                                     name={card.logo}

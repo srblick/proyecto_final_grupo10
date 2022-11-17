@@ -5,6 +5,7 @@
 }
 
 body {
+  background-image: "img/fondo.jpg";
   overflow-x: hidden;
   margin: 0;
   font-family: Helvetica, sans-serif;

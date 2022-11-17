@@ -12,10 +12,11 @@ function Navbar() {
       <NavContainer>
         <h2>Menu <span>Inicio</span></h2>
         <div className={`links ${clicked ? 'active' : ''}`}>
-          <a onClick={handleClick} href="#h">Inicio</a>
-          <a onClick={handleClick} href="#h">Juego</a>
-          <a onClick={handleClick} href="#h">Desarolladores</a>
-          <a onClick={handleClick} href="#h">Otros Juegos</a>
+          <a onClick={handleClick} href="/">Inicio</a>
+          <a onClick={handleClick} href="/JuegoSpace">JuegoSpace</a>
+          <a onClick={handleClick} href="/JuegoMemoria">JuegoMemoria</a>
+          <a onClick={handleClick} href="/JuegoTateti">TaTeTi</a>
+          <a onClick={handleClick} href="/desarrolladores">Desarolladores</a>
         </div>
         <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
       </NavContainer>
