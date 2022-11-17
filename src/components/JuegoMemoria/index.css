@@ -81,3 +81,35 @@
   height: calc(150px - 10px);
   width: calc(240px - 10px);
 }
+
+
+.style{
+  text-align: center;
+  padding: 10 px;
+  color: black;
+  font-size: 40 px;
+  font-family: 'Poppins', sans-serif;
+  background-color: aliceblue;
+}
+
+.button{
+  border: none;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  width: 300px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  color: coral;
+  background-size: 200%;
+  transform: 3s ease all;
+
+  margin-left: 100px;
+}
+
+.button:hover{
+  background: rgba(177, 136, 83, 0.822);
+}
