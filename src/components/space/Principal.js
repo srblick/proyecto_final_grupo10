@@ -194,7 +194,7 @@ class Principal extends Phaser.Scene{
 
     updateEnemies(player){
         let enemies = this.enemyGroup.getChildren();
-        let aux= Phaser.Math.Between(0,enemies.length); // el enemigo que dispara
+        let enemigoQueDispara = Phaser.Math.Between(0,enemies.length - 1); // el enemigo que dispara
         for (let i = 0; i < enemies.length; i++)
         {
             let t = enemies[i].z;
@@ -202,7 +202,7 @@ class Principal extends Phaser.Scene{
             //  el vector es actualizado
             this.rutas[this.round].getPoint(t, vec);
             enemies[i].setPosition(vec.x, vec.y);
-            if(this.time.now > this.enemyShotTime && aux == i)
+            if(this.time.now > this.enemyShotTime && enemigoQueDispara  == i)
             {   
                 this.toShootEnemy(vec.x, vec.y, player);
             }
