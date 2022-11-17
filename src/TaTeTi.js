@@ -16,7 +16,7 @@ const winningPositions = [//condiciones posibles ganadoras
 ];
 
 
-const App = () => {
+const TaTeTi = () => {
 
   const [turn, setTurn] = useState('X');//de quien es el turno
   const [squares, setSquares] = useState(Array(9).fill(null));//cuadraditos del tablero. Cuando se inicia la app todos valores estan nulos(vacios)
@@ -80,4 +80,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default TaTeTi;
