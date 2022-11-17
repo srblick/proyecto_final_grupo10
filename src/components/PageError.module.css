@@ -1,0 +1,15 @@
+.pageError{
+    color: black;
+    list-style: none;
+    font-size: 5rem;
+    text-align: center;
+    font-family: fantasy;
+}
+
+ .imagen404{
+    background-color: black;
+    justify-content: center;
+    border-style: none;
+    border-color: #f6ab21;
+    border-radius: 15px;
+ }
