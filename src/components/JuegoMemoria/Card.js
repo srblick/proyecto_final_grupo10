@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import ReactCardFlip from 'react-card-flip';
-import back from '../images/pregunta.png';
+import back from "./images/pregunta.png";
 
 const Card = ({ name, number, front, flipCard, unflippedCards, disabledCards }) => {
     const [isFlipped, setIsFlipped] = useState(false); //este useState dice si la carta esta volteada o no
-    const [hasEvent, setHasEvent] = useState(true);
+    const [hasEvent, setHasEvent] = useState(true); //este useState dice que esta variable tiene un evento que cumplir
 
     useEffect(() => {
         if(unflippedCards.includes(number)){ //este if dice que si se ejecuta unflippedCards la carta vuelve a su estado original, en 700 ms.

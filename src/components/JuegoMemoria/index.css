@@ -34,6 +34,31 @@
   font-size: 15px;
 }
 
+.HUDWinLose {
+  background-color: gainsboro;
+  border: 2px solid black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 40px;
+}
+
+.msj {
+  margin-left: 25%;
+}
+
+.boton {
+  border-radius: 40px;
+			display: inline-block;
+			padding: 30px 100px;
+			text-decoration: none;
+			text-shadow: 0 1px 0 rgba(107, 189, 255, 0.3);
+			box-shadow: 0 1px 1px rgba(0,0,0,0.3); 
+      margin-left: 10%;
+      font-size: 30px;
+}
+.boton:hover {
+  background-color: aqua;
+}
+
 .cards-container{
   width: 1000px;
   height: 510px;
