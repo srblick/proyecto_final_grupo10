@@ -5,13 +5,15 @@ import src4 from "./images/cardsImages/naughtyDog.png"
 import src5 from "./images/cardsImages/superMario.png"
 import src6 from "./images/cardsImages/valve.png"
 
-const images = [
+/** PRIMERO SE IMPORTAN LAS CARTAS DESDE EL "IMPORT SRC" */
+
+const images = [ //Se crea un arreglo de objetos con el nombre "images"
     {
-        src: src1,
-        logo: "Half Life"
+        src: src1, //Corresponde a la ruta donde se encuentra la imagen.
+        logo: "Half Life" //nombre de la imagen
     },
     {
-        src: src1,
+        src: src1, //Esta es su duplicado para aplicarlo en el juego final.
         logo: "Half Life"
     },
     {
@@ -56,4 +58,4 @@ const images = [
     },
 ];
 
-export { images }
+export { images } //se exportan las imagenes.
